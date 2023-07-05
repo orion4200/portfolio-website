@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{                  /*universal selector*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: none;
+    font-family: 'Poppins', sans-serif;
+}
+:root {                                       /*same as html selector but with higher specificity*/              
+    --bg-color: #1f242d ;                   /* global css variables*/
+    --second-bg-color: #323946 ;
+    --text-color: #fff ;
+    --main-color: #0ef ;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;      /*sets what shows when content overflows a block-level element's left or right edges.*/
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-color);    /*using global variables*/
+    color: var(--text-color);
+    position: relative;
+    min-height: 120%;
+    /* margin: 0; */
+    padding-bottom: 6rem;
+    box-sizing: inherit;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+
+
+.header {           /*using class selector header*/
+    position: fixed;            /*how element is positioned*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;                     /*element behaves like a block-level element*/
+    justify-content: space-between;    /*how the browser distributes space between and around content items*/
+    align-items: center;                        
+    z-index: 100;                      /*sets overlapping order of el*/
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;                /*sets the mouse cursor when mouse pointer is over it*/
+}
+
+.navbar a {                          /*descendent selector - all anchor tags within navbar will be styled*/
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,                     /*pseudo classes- select special state of class, ex- when it is hovered over then it will be styled*/
+.navbar a.active {                   /*select class active in the anchor tags of class navbar*/    
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.edu{
+	background-color: #24292d;
+	min-height: 100vh;
+	padding: 100px 15px;
+}
+.timeline-items{
+	max-width: 1000px;
+	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+    padding: 50px;
+}
+.timeline-items::before{
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 95%;
+	background-color: #2f363e;
+	left: calc(50% - 1px);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+.timeline-i{
+	margin-bottom: 40px;
+	width: 100%;
+	position: relative;
+}
+.timeline-i:last-child{
+	margin-bottom: 0;
+}
+.timeline-i:nth-child(odd){
+    padding-right: calc(50% + 30px);
+	text-align: right;
+}
+.timeline-i:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+	height: 16px;
+	width: 16px;
+	background-color: #B3DF51;
+	position: absolute;
+	left: calc(50% - 8px);
+	border-radius: 50%;
+	top:10px;
+}
+.timeline-date{
+	font-size: 18px;
+	color: #B3DF51;
+	margin:6px 0 15px;
+}
+.timeline-content{
+    background-color: #2f363e;
+	padding: 30px;
+	border-radius: 5px;
+}
+.timeline-content h3{
+    font-size: 20px;
+	color: #ffffff;
+	margin:0 0 10px;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+.timeline-content p{
+    color: #c8c8c8;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 22px;
+}
+
+
+.social-media a{
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s ease;                        /*when transitioning between different states*/
+}
+
+.social-media a:hover{
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0  1rem var(--main-color);        /*visual effect box shadow*/
+}
+
+footer {
+    padding: 20px;
+    background-color: var(--second-bg-color);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+
+.footer-text{
+    font-size: 1.6rem;
+}
